@@ -1,2 +1,2 @@
 #!/bin/bash
-psql -h localhost -U datos -d datos < datos.sql
+psql -h localhost -U empresa -d empresa < datos.sql

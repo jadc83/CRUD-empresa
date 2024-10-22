@@ -82,7 +82,7 @@
             <th>Denominación</th>
             <th>Localidad</th>
             <th>Alta</th>
-            <th>Acciones</th>
+            <th colspan="2">Acciones</th>
         </thead>
         <tbody>
             <?php foreach ($stmt as $fila): ?>
@@ -90,12 +90,13 @@
                     <td><?= $fila['codigo'] ?></td>
                     <td><?= $fila['denominacion'] ?></td>
                     <td><?= $fila['localidad'] ?></td>
-                    <td><?= (new DateTime($fila['fecha_alta']))->format('d/m/Y') ?></td>
+                    <td><?= fecha_formateada($fila['fecha_alta']) ?></td>
+                    <td><a href="modificar.php?id=<?= $fila['id'] ?>">Modificar</a></td>
                     <td><a href="borrar.php?id=<?= $fila['id'] ?>">Borrar</a></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
     </table>
-    <a href="insertar.php">Insertar un nuevo departamento</a>
+    <a href="insertar_departamento.php">Insertar un nuevo departamento</a>
 </body>
 </html>
